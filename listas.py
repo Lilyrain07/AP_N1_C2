@@ -1,12 +1,12 @@
-print('\nTrabajando con LISTAS' )
-lista =[armando casas, True, 1.58]
-orint (lista)
+print('\n Trabajando con LISTAS' )
+lista =['armando casas, True, 1.58']
+print (lista)
 
 print (type(lista))
 
 print(lista[0])
-print(lis[1])
-print (lista[2])
+print(lista[1])
+print(lista[2])
 
 print (type(lista[0]))
 print (type(lista[1]))
