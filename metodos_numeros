@@ -19,9 +19,9 @@ print(division.is_integer())
 
 print(dir(math))
 print(math.floor(division))
-#floor trunca el resultado de una operacion o numero
-#round aproxima el resultado de una operacion o numero 
-#sqtr calcula la raiz cuadrada de un numero
-#eleva el numero e a la potencia indicada como argumento
+#FLOOR trunca el resultado de una operacion o numero
+#ROUND aproxima el resultado de una operacion o numero 
+#SQRT calcula la raiz cuadrada de un numero
+# eleva el numero e a la potencia indicada como argumento
 print(round(9/5))
 print(math.pi*25)
