@@ -21,11 +21,23 @@ else:
 str_sueldo_mensual = input('ingrese su sueldo mensual: $')
 sueldo_mensual = float(str_sueldo_mensual)
 
-if sueldo_mensual >= 7000000:
-    print ('usted pertenece a la clase AB')
-elif sueldo_mensual >= 3500000:
-    print ('usted pertenece a la clase C1')
-elif sueldo_mensual >= 2000000:
-    print ('usted pertenece a la clase C2')
+if str_sueldo_mensual.isdigit():
+    sueldo_mensual= float(str_sueldo_mensual)
 else:
-    print ('usted pertenece a la clase DE')
+    print('valor ingresado NO corresponde')
+
+if sueldo_mensual > 0:
+ if sueldo_mensual >=7000000:
+    print ('usted pertenece a la clase Ata elite')
+ elif 350000 < sueldo_mensual <=7000000:
+    print ('usted pertenece a la clase alta profesional')
+ elif 2000000 < sueldo_mensual <=3500000:
+    print ('usted pertenece a la clase media alta')
+ elif 1200000 < sueldo_mensual <= 2000000:
+    print ('usted pertenece a la clase media emergente')
+ elif 700000 < sueldo_mensual <= 1200000:
+    print ('usted pertenece a la clase media baja')
+ elif sueldo_mensual <= 700000: 
+    print('usted pertenece a la clase baja')
+ else:
+    print ('sueldo ingresado NO corresponde')
