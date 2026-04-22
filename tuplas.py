@@ -4,7 +4,7 @@
 #y protegen los datos de modificaciones accidentales
 #su uso mas general es para manejarb datos de solo lectura
 
-print('trabajando cpon tuplas')
+print('trabajando con tuplas')
 tupla = ('armando casas, True, 1.60')
 print (type{tupla})
 print (tupla)
