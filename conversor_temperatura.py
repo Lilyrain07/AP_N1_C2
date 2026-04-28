@@ -1,51 +1,57 @@
-#Teniendo 3 escala de temperatura(celsius,fahrenheit y kelvin)
-#Cree un conversor de temperaturas que le pida al usuario la escala inicial a la que desea convertir
-#y el valor inicial de temperratura
+# Teniendo 3 escalas de temperatura (Celsius, Fahrenheit, Kelvin)
+# Cree un conversor de temperaturas que le pida al usuario la temperatura y escala inicial
+# Y la escala a la que desea convertir, luego muestre el resultado de la conversión
 
-#C° a F° = 1,8°C + 32°
-#F° a C°= 5/9(F°-32)
+# °C a F = 1,8°C + 32°
+# F a °C = 5/9(°F-32°)
 
-#C° a K° = C° + 273
-#K° a C° = 1,8°C + 32°
+# °C a K = °C + 273°
+# K a °C = K - 273°
 
-#F° a K° =(5/9(F°-32)) + 273°
-#K° a F° = 1,8°C + 32°
-print('sistema conversor de temperaturas')
+# K a F = (1,8°C + 32°) + 273°
+# F a K = (5/9(°F-32°)) + 273°
 
-print ('ingrese escala inicial')
-print ('c para celcius')
-print('k para kelvin')
-print ('f para fahrenheit')
+msg_escala_erronea = 'Escala final NO corresponde.'
 
-escala_inicial = input('ingrese escala inicial: ').upper()
-str_temperatura = input('ingrese la temperatura: ')
-escala_final =input ('ingrese escala final: ').upper()
+print("Sistema Conversor de Temperaturas")
+print("=================================")
+print("Para comenzar ingrese su escala inicial")
+print("C - para Celsius")
+print("F - para Fahrenheit")
+print("K - para Kelvin")
+
+print()
+escala_inicial = input("Ingrese escala inicial: ").upper()
+str_temperatura = input("Ingrese su temperatura: ")
+escala_final = input("Ingrese escala final: ").upper()
 
 if str_temperatura.isdigit():
     temperatura = float(str_temperatura)
 else:
-    print ('el valor de temperatura NO es valido.')
+    print("El valor de temperatura NO corresponde.")
 
-if escala_inicial == 'F': 
-    if escala_final == 'K':
-         resultado = (5/9(temperatura - 32)) + 273
-    elif escala_final == 'C':
-        resultado = 5/9(temperatura-32)
+if escala_inicial == "F":
+    if escala_final == "K":
+        resultado = (5/9 * (temperatura-32)) + 273
+    elif escala_final == "C":
+        resultado = 5/9 * (temperatura-32)
+    else:
+        print(msg_escala_erronea)
+elif escala_inicial == "C":
+    if escala_final == "K":
+        resultado = temperatura + 273
+    elif escala_final == "F":
+        resultado = 1,8 * temperatura+ 32
+    else:
+        print(msg_escala_erronea)
+elif escala_inicial == "K":
+    if escala_final == "F":
+        resultado = (1,8 * temperatura + 32) + 273
+    elif escala_final == "C":
+        resultado = temperatura - 273
+    else:
+        print(msg_escala_erronea)
 else:
-    print ('escala final no valida')
+    print("Escala inicial NO corresponde.")
 
-
-if escala_inicial == 'C': 
-    if escala_final == 'K':
-         resultado = (temperatura + 273)
-    elif escala_final == 'F':
-        resultado = 1,8*temperatura + 32
-    print ('escala final no valida')
-
-if escala_inicial == 'K': 
-    if escala_final == 'F':
-         resultado = (1,8*temperatura + 32)
-    elif escala_final == 'C':
-        resultado = 5/9(temperatura-32)
-else:
-    print ('escala final no valida')
+print(f'{temperatura} {escala_inicial}° = {round(resultado,2)} {escala_final}°')
