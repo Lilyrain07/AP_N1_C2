@@ -6,10 +6,10 @@
 #F° a C°= 5/9(F°-32)
 
 #C° a K° = C° + 273
-#K° a C° = K° - 273
+#K° a C° = 1,8°C + 32°
 
 #F° a K° =(5/9(F°-32)) + 273°
-#K° a F° = (1,8°C +32) + 273°
+#K° a F° = 1,8°C + 32°
 print('sistema conversor de temperaturas')
 
 print ('ingrese escala inicial')
@@ -27,28 +27,25 @@ else:
     print ('el valor de temperatura NO es valido.')
 
 if escala_inicial == 'F': 
-     if escala_final == 'K':
-         resultado =#
-    elif escala_final =='C'
-        resultado = #
-    else:
-    print ('escala final no valida')
-
-elif escala_inicial == 'C'
-      if escala_final == 'K':
-         resultado =#
-    elif escala_final =='F'
-        resultado = #
-    else:
-    print ('escala final no valida')
-
-elif escala_inicial == 'K'
-      if escala_final == 'k':
-         resultado =#
-    elif escala_final =='c'
-        resultado = #
-    else:
-    print ('escala final no valida')
+    if escala_final == 'K':
+         resultado = (5/9(temperatura - 32)) + 273
+    elif escala_final == 'C':
+        resultado = 5/9(temperatura-32)
 else:
-    print('escala inicial  no valida.')
+    print ('escala final no valida')
 
+
+if escala_inicial == 'C': 
+    if escala_final == 'K':
+         resultado = (temperatura + 273)
+    elif escala_final == 'F':
+        resultado = 1,8*temperatura + 32
+    print ('escala final no valida')
+
+if escala_inicial == 'K': 
+    if escala_final == 'F':
+         resultado = (1,8*temperatura + 32)
+    elif escala_final == 'C':
+        resultado = 5/9(temperatura-32)
+else:
+    print ('escala final no valida')
