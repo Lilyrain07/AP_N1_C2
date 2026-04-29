@@ -6,24 +6,26 @@
 # el volumen de un cilindro usando la primera funcion del area
 import math
 import calculadora
+from calculadora import convertir_float
 
 def area_circunferencia(radio):
     pi = math.pi
     resultado = pi * radio *radio
     return resultado
 
-def volumen_cilindro():
-area = area_circunferencia(radio)
-resultado = area *altura
-return resultado
+def volumen_cilindro(radio, altura):
+    area = area_circunferencia(radio)
+    resultado = area *altura
+    return resultado
 
 def calculo_volumen_cilindro():
     print('ingrese los datos solicitados')
     str_radio= input('radio de cilindro: ')
     str_altura = input ('altura de cilindro: ')
-    radio = calculadora.convertir_float (str_radio)
+    radio = calculadora.convertir_float(str_radio)
     altura = calculadora.convertir_float(str_altura)
     volumen = volumen_cilindro(radio, altura)
+    print(volumen)
 
 #3._ escriba una funcion que permita escribir la tabla de multiplicar de un numero ingresado por el usuario
 
