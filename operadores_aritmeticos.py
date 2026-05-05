@@ -21,9 +21,8 @@ print(multiplicacion_2)
 #operador division 
 division=45/25
 print(division)
-
-division_0 = 25/0
-print(division_0)
+#cuando tenemos errores logicos podemos hacer control de errores, pero ojo
+#los controles de errores se hacen ANTES DE LA OPERACION
 
 def division (a,b):
     try:
@@ -35,3 +34,14 @@ def division (a,b):
         print (f'error en la operacion: {error}')
 
 division(25,0)
+
+#operador potencia
+
+potencia= 5**7
+print(potencia)
+
+#operador RESTO
+#permite obtener el resto de una division
+resto = 9.5 % 4.5
+print (resto)
+
