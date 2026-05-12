@@ -2,9 +2,16 @@
 #mediante el cual se ejecutara cada uno de ellos
 
 #1.- escriba una funcion que al ser llamada imprima el saludo "buen dia"
-
-#2.-escruba una funcion que solicite al usuario ingresar su nombre
+def saludo():
+    saludo = '¡Buenos dias estudiante inacap!'
+    return saludo
+#2.-escriba una funcion que solicite al usuario ingresar su nombre
 #en unba variable nombre_usuario
+
+def nombre_usuario():
+    nombre_usuario = input('ingrese su nombre: ')
+    return nombre_usuario.title()
+
 
 #3.- escribir una funcion que pida al usuario un numero entero menor a 10
 #y al ser llamada entregue el factorial de ese numero
@@ -23,16 +30,13 @@ def menu_principal():
 
         if opcion in valores_opcion:
             if opcion == '1':
-                saludo = ('¡Buenos dias estudiante inacap!')
                 print(saludo)
             elif opcion == '2':
-                nombre_usuario = input('¿cual es su nombre?: ')
-                print (f'buenos dias {nombre_usuario} ')
+                print (f'buenos dias {nombre_usuario}')
             elif opcion == '3':
                 numero= input('ingrese el numero que quiere (debe ser un numero MENOR A 10!): ')
                 if numero < 10:
-                    resultado = math.factorial(numero)
-                    print (f'el resultado de su numero en factoriales es: {numero}! = {resultado} ')
+                    resultado = pass 
                 else:
                     print('numero ingresado no corresponde, intentelo de nuevo.')
 
