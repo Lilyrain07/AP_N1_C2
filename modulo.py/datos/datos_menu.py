@@ -7,3 +7,5 @@ datos_menu = {
     '6': 'sistema de alerta',
     '0':'Salir'
 }
+
+opciones_validas = ['1', '2', '3', '4', '5', '6', '0']
