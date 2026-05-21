@@ -4,8 +4,20 @@ datos_menu = {
     '3':'Gestión Lectores',
     '4':'Gestión Préstamos',
     '5':'Gestión Sistema',
-    '6': 'sistema de alerta',
+    '6':'Sistema Alerta',
     '0':'Salir'
 }
 
-opciones_validas = ['1', '2', '3', '4', '5', '6', '0']
+opciones_validas_menu = ['1','2','3','4','5','6','0']
+
+datos_sub_menu = {
+    '1':'Agregar',
+    '2':'Listado',
+    '3':'Modificar',
+    '4':'Eliminar',
+    '0':'Volver a Menú Anterior'
+}
+
+opciones_validas_sub_menu = ['1','2','3','4','0']
+
+mensaje_volver = 'Volviendo al menú principal.'
