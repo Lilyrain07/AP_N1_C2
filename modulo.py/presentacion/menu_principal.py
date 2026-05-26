@@ -1,6 +1,6 @@
 from datos import datos_menu,opciones_validas_menu,datos_sub_menu,mensaje_volver,opciones_validas_sub_menu,mensaje_opcion_incorrecta
 from datos import numero_version
-from presentacion.control_libros import agregar_libro,listado_libros,modificar_libro,eliminar_libro
+from presentacion.control_libros import agregar_libro,listar_libros,modificar_libro,eliminar_libro
 titulo = 'Sistema Gestión Biblioteca'
 
 def menu_principal():
@@ -20,7 +20,7 @@ def menu_principal():
                 if opcion_sub_menu == '1':
                     agregar_libro()
                 elif opcion_sub_menu == '2':
-                    listado_libros()
+                    listar_libros()
                 elif opcion_sub_menu == '3':
                     modificar_libro()
                 elif opcion_sub_menu == '4':

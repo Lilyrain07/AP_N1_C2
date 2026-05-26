@@ -8,13 +8,13 @@ def agregar_libro():
     titulo_libro, isbn, editorial, paginas, categoria = solicitar_datos_libro()
 
 
-def listado_libros():
+def listar_libros():
      titulo= 'listado de libros'
 print (titulo)
 print ('=' * len(titulo))
 print(listado_libros)
 for libro in listado_libros:
-    orint(libro)
+    print(libro)
 
 def modificar_libro():
     titulo= 'modificar libro'
