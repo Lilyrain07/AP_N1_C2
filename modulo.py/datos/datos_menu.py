@@ -21,3 +21,4 @@ datos_sub_menu = {
 opciones_validas_sub_menu = ['1','2','3','4','0']
 
 mensaje_volver = 'Volviendo al menú principal.'
+mensaje_opcion_incorrecta = 'Opción Ingresada NO Corresponde.'
