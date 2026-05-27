@@ -6,8 +6,11 @@ def agregar_libro():
     titulo = 'Agregar Libro'
     print(titulo)
     print('=' * len(titulo))
-    print('Ingrese los datos del libro:')
+    listar_libros()
+
+    print('\nIngrese los datos del libro:')
     titulo_libro,isbn,editorial,paginas,categoria = solicitar_datos_libro()
+    print(titulo_libro + isbn + editorial + paginas + categoria)
 
 def listar_libros():
     tabla_libros = PrettyTable()
