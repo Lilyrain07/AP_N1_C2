@@ -10,11 +10,15 @@ def agregar_libro():
     titulo_libro,isbn,editorial,paginas,categoria = solicitar_datos_libro()
 
 def listar_libros():
+    tabla_libros = PrettyTable()
+    tabla_libros.field_names = ['Título', 'ISBN', 'Editorial', 'Páginas', 'Categoría']
+
     titulo = 'Listado de Libros'
     print(titulo)
     print('=' * len(titulo))
     for libro in listado_libros:
-        print(libro)
+        tabla_libros.add_row([libro['titulo_libro'], libro['isbn'], libro['editorial'], libro['paginas'], libro['categoria']])
+    print(tabla_libros)
 
 def modificar_libro():
     titulo = 'Modificar Libro'
@@ -33,3 +37,4 @@ def solicitar_datos_libro():
     paginas = input('Cantidad de Páginas: ')
     categoria = input('Categoría: ')
     return titulo_libro,isbn,editorial,paginas,categoria
+
