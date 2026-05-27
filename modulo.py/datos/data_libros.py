@@ -1,6 +1,6 @@
 from datos import listado_libros
 
-def guardar_libro(titulo_libro,isbn,editorial,paginas,categoria):
+def incorporar_libro(titulo_libro,isbn,editorial,paginas,categoria):
     nuevo_libro = {
         'titulo_libro':titulo_libro,
         'isbn':isbn,
