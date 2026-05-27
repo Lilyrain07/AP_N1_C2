@@ -1,5 +1,6 @@
 from datos import listado_libros
 from prettytable import PrettyTable
+from datos.data_libros import guardar_libro
 
 
 def agregar_libro():
@@ -10,7 +11,7 @@ def agregar_libro():
 
     print('\nIngrese los datos del libro:')
     titulo_libro,isbn,editorial,paginas,categoria = solicitar_datos_libro()
-    print(titulo_libro + isbn + editorial + paginas + categoria)
+    guardar_libro (titulo_libro + isbn + editorial + paginas + categoria)
 
 def listar_libros():
     tabla_libros = PrettyTable()
@@ -34,10 +35,6 @@ def eliminar_libro():
     print('=' * len(titulo))
 
 def solicitar_datos_libro():
-    titulo_libro = input('Título: ')
-    isbn = input('ISBN: ')
-    editorial = input('Editorial: ')
-    paginas = input('Cantidad de Páginas: ')
-    categoria = input('Categoría: ')
-    return titulo_libro,isbn,editorial,paginas,categoria
+    titulo_libro=isbn=editorial=paginas=categoria = ''
 
+  
