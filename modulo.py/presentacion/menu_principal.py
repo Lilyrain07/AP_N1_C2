@@ -1,6 +1,7 @@
 from datos import datos_menu,opciones_validas_menu,datos_sub_menu,mensaje_volver,opciones_validas_sub_menu,mensaje_opcion_incorrecta
 from datos import numero_version
-from presentacion.control_libros import agregar_libro,listar_libros,modificar_libro,eliminar_libro
+from presentacion.control_libro import agregar_libro,listar_libros,modificar_libro,eliminar_libro
+
 titulo = 'Sistema Gestión Biblioteca'
 
 def menu_principal():
@@ -28,8 +29,9 @@ def menu_principal():
                 elif opcion_sub_menu == '0':
                     print(mensaje_volver)
                     break
-                else: 
+                else:
                     print(mensaje_opcion_incorrecta)
+
         elif opcion_usuario == '2':
             # Gestión Autores
             while True:
@@ -42,13 +44,14 @@ def menu_principal():
                     pass
                 elif opcion_sub_menu == '4':
                     pass
-                if opcion_sub_menu == '0':
+                elif opcion_sub_menu == '0':
                     print(mensaje_volver)
                     break
+                else:
+                    print(mensaje_opcion_incorrecta)
         elif opcion_usuario == '3':
             # Gestión Lectores
             while True:
-                opcion_sub_menu = sub_menu('Lector')
                 if opcion_sub_menu == '1':
                     pass
                 elif opcion_sub_menu == '2':
@@ -57,9 +60,11 @@ def menu_principal():
                     pass
                 elif opcion_sub_menu == '4':
                     pass
-                if opcion_sub_menu == '0':
+                elif opcion_sub_menu == '0':
                     print(mensaje_volver)
                     break
+                else:
+                    print(mensaje_opcion_incorrecta)
         elif opcion_usuario == '4':
             # Gestión Préstamos
             while True:
@@ -72,9 +77,11 @@ def menu_principal():
                     pass
                 elif opcion_sub_menu == '4':
                     pass
-                if opcion_sub_menu == '0':
+                elif opcion_sub_menu == '0':
                     print(mensaje_volver)
                     break
+                else:
+                    print(mensaje_opcion_incorrecta)
         elif opcion_usuario == '5':
             # Gestión Sistema
             while True:
@@ -87,12 +94,15 @@ def menu_principal():
                     pass
                 elif opcion_sub_menu == '4':
                     pass
-                if opcion_sub_menu == '0':
+                elif opcion_sub_menu == '0':
                     print(mensaje_volver)
                     break
+                else:
+                    print(mensaje_opcion_incorrecta)
         elif opcion_usuario == '6':
             # Sistema Alerta
             while True:
+                opcion_sub_menu = sub_menu('Alerta')
                 if opcion_sub_menu == '1':
                     pass
                 elif opcion_sub_menu == '2':
@@ -101,6 +111,11 @@ def menu_principal():
                     pass
                 elif opcion_sub_menu == '4':
                     pass
+                elif opcion_sub_menu == '0':
+                    print(mensaje_volver)
+                    break
+                else:
+                    print(mensaje_opcion_incorrecta)
         elif opcion_usuario == '0':
             print('Saliendo, gracias por gestionar su biblioteca')
             break
@@ -109,7 +124,7 @@ def menu_principal():
 
 def seleccionar_opcion(menu):
     while True:
-        opcion = input(f'Seleccione su opción [0-{len(menu) - 1}]:')
+        opcion = input(f'Seleccione su opción [0-{len(menu) - 1}]: ')
         if len(menu) <= 5:
             opciones = opciones_validas_sub_menu
         else:

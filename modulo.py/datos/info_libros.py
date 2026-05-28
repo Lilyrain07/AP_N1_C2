@@ -1,3 +1,3 @@
 listado_libros = [
-    {'titulo_libro': 'boulevard', 'isbn': '8419241105', 'editorial': 'Montena', 'paginas': '336', 'categoria': 'literatura juvenil'}
+    {'titulo_libro':'El Hobbit','isbn':'9789569957543','editorial':'Minotauro','paginas':288,'categoria':'Fantasía'}
 ]

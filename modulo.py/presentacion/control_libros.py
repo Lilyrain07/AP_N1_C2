@@ -1,6 +1,6 @@
 from datos import listado_libros
 from prettytable import PrettyTable
-from datos import incorporar_libro
+from negocio import procesar_libro
 
 def agregar_libro():
     titulo = '\nAgregar Libro'
@@ -9,8 +9,8 @@ def agregar_libro():
     listar_libros()
 
     print('\nIngrese los datos del libro:')
-    titulo_libro,isbn,editorial,paginas,categoria = solicitar_datos_libro()
-    incorporar_libro(titulo_libro, isbn, editorial, paginas, categoria)
+    procesar_libro()
+
 
 def listar_libros():
     tabla_libros = PrettyTable()
@@ -46,3 +46,7 @@ def solicitar_datos_libro():
     while categoria == '':
         categoria = input('Categoría: ').strip()
     return titulo_libro,isbn,editorial,paginas,categoria
+
+def solicitar_dato(tipo_dato,nombre_dato):
+    while tipo_dato == '':
+        tipo_dato = input(f'{nombre_dato}: ').strip()

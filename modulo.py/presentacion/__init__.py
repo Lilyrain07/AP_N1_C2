@@ -1,3 +1,2 @@
 from presentacion.menu_principal import menu_principal
-from presentacion.control_libros import agregar_libro,listar_libros,modificar_libro,eliminar_libro
-menu_principal()
+from presentacion.control_libro import agregar_libro,listado_libros,modificar_libro,eliminar_libro,solicitar_dato
