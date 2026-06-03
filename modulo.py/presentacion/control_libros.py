@@ -1,148 +1,52 @@
-from datos import datos_menu,opciones_validas_menu,datos_sub_menu,mensaje_volver,opciones_validas_sub_menu,mensaje_opcion_incorrecta,titulo_app
-from datos import numero_version
-from presentacion.control_libro import agregar_libro,listar_libros,modificar_libro,eliminar_libro
+from datos import listado_libros
+from prettytable import PrettyTable
+from negocio import procesar_libro,crear_tabla_libros
 
-def menu_principal():
-    print(f'\n{titulo_app} v{numero_version}')
-    print(f'{'=' * len(titulo_app)}=={'=' * len(numero_version)}')
-
-    while True:
-        titulo = 'Menú Principal'
-        print()
-        print(titulo)
-        print('=' * len(titulo))
-        for clave, valor in datos_menu.items():
-            print(f'[{clave}] {valor}')
-        opcion_usuario = seleccionar_opcion(datos_menu)
-
-        if opcion_usuario == '1':
-            # Gestión Libros
-            while True:
-                opcion_sub_menu = sub_menu('Libro')
-                if opcion_sub_menu == '1':
-                    agregar_libro()
-                elif opcion_sub_menu == '2':
-                    listar_libros()
-                elif opcion_sub_menu == '3':
-                    modificar_libro()
-                elif opcion_sub_menu == '4':
-                    eliminar_libro()
-                elif opcion_sub_menu == '0':
-                    print(mensaje_volver)
-                    break
-                else:
-                    print(mensaje_opcion_incorrecta)
-
-        elif opcion_usuario == '2':
-            # Gestión Autores
-            while True:
-                opcion_sub_menu = sub_menu('Autor')
-                if opcion_sub_menu == '1':
-                    pass
-                elif opcion_sub_menu == '2':
-                    pass
-                elif opcion_sub_menu == '3':
-                    pass
-                elif opcion_sub_menu == '4':
-                    pass
-                elif opcion_sub_menu == '0':
-                    print(mensaje_volver)
-                    break
-                else:
-                    print(mensaje_opcion_incorrecta)
-        elif opcion_usuario == '3':
-            # Gestión Lectores
-            while True:
-                opcion_sub_menu = sub_menu('Lector')
-                if opcion_sub_menu == '1':
-                    pass
-                elif opcion_sub_menu == '2':
-                    pass
-                elif opcion_sub_menu == '3':
-                    pass
-                elif opcion_sub_menu == '4':
-                    pass
-                elif opcion_sub_menu == '0':
-                    print(mensaje_volver)
-                    break
-                else:
-                    print(mensaje_opcion_incorrecta)
-        elif opcion_usuario == '4':
-            # Gestión Préstamos
-            while True:
-                opcion_sub_menu = sub_menu('Préstamo')
-                if opcion_sub_menu == '1':
-                    pass
-                elif opcion_sub_menu == '2':
-                    pass
-                elif opcion_sub_menu == '3':
-                    pass
-                elif opcion_sub_menu == '4':
-                    pass
-                elif opcion_sub_menu == '0':
-                    print(mensaje_volver)
-                    break
-                else:
-                    print(mensaje_opcion_incorrecta)
-        elif opcion_usuario == '5':
-            # Gestión Sistema
-            while True:
-                opcion_sub_menu = sub_menu('Usuario')
-                if opcion_sub_menu == '1':
-                    pass
-                elif opcion_sub_menu == '2':
-                    pass
-                elif opcion_sub_menu == '3':
-                    pass
-                elif opcion_sub_menu == '4':
-                    pass
-                elif opcion_sub_menu == '0':
-                    print(mensaje_volver)
-                    break
-                else:
-                    print(mensaje_opcion_incorrecta)
-        elif opcion_usuario == '6':
-            # Sistema Alerta
-            while True:
-                opcion_sub_menu = sub_menu('Alerta')
-                if opcion_sub_menu == '1':
-                    pass
-                elif opcion_sub_menu == '2':
-                    pass
-                elif opcion_sub_menu == '3':
-                    pass
-                elif opcion_sub_menu == '4':
-                    pass
-                elif opcion_sub_menu == '0':
-                    print(mensaje_volver)
-                    break
-                else:
-                    print(mensaje_opcion_incorrecta)
-        elif opcion_usuario == '0':
-            print('Saliendo, gracias por gestionar su biblioteca')
-            break
-        else:
-            print(mensaje_opcion_incorrecta)
-
-def seleccionar_opcion(menu):
-    while True:
-        opcion = input(f'Seleccione su opción [0-{len(menu) - 1}]: ')
-        if len(menu) <= 5:
-            opciones = opciones_validas_sub_menu
-        else:
-            opciones = opciones_validas_menu
-        if opcion in opciones:
-            return opcion
-
-def sub_menu(tipo_dato):
-    titulo = f'Submenú {tipo_dato}'
-    print()
+def agregar_libro():
+    titulo = '\nAgregar Libro'
     print(titulo)
     print('=' * len(titulo))
-    for clave, valor in datos_sub_menu.items():
-        if clave != '0':
-            print(f'[{clave}] {valor} {tipo_dato}')
-        else:
-            print(f'[{clave}] {valor}')
-    opcion_usuario = seleccionar_opcion(datos_sub_menu)
-    return opcion_usuario
+    listar_libros()
+
+    print('\nIngrese los datos del libro:')
+    procesar_libro()
+
+
+def listar_libros():
+    tabla_libros = PrettyTable()
+
+    titulo = '\nListado de Libros'
+    print(titulo)
+    print('=' * len(titulo))
+    tabla_libros = crear_tabla_libros()
+    print(tabla_libros)
+
+def modificar_libro():
+    titulo = '\nModificar Libro'
+    print(titulo)
+    print('=' * len(titulo))
+    titulo_libro = solicitar_dato(titulo_libro, 'ingrese el titulo del libro')
+
+def eliminar_libro():
+    titulo = '\nEliminar Libro'
+    print(titulo)
+    print('=' * len(titulo))
+
+def solicitar_datos_libro():
+    titulo_libro = isbn = editorial = paginas = categoria = ''
+    while titulo_libro == '':
+        titulo_libro = input('Título: ').strip()
+    while isbn == '':
+        isbn = input('ISBN: ').strip()
+    while editorial == '':
+        editorial = input('Editorial: ').strip()
+    while paginas == '':
+        paginas = input('Cantidad de Páginas: ').strip()
+    while categoria == '':
+        categoria = input('Categoría: ').strip()
+    return titulo_libro,isbn,editorial,paginas,categoria
+
+def solicitar_dato(tipo_dato,mensaje_input):
+    while tipo_dato == '':
+        tipo_dato = input(f'{mensaje_input}: ').strip()
+        return tipo_dato
