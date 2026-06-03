@@ -1,1 +1,1 @@
-from negocio.negocio_libros import procesar_libro
+from negocio.negocio_libros import procesar_libro,crear_tabla_libros

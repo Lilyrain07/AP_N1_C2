@@ -1,6 +1,6 @@
 from datos import datos_menu,opciones_validas_menu,datos_sub_menu,mensaje_volver,opciones_validas_sub_menu,mensaje_opcion_incorrecta
 from datos import numero_version
-from presentacion.control_libro import agregar_libro,listar_libros,modificar_libro,eliminar_libro
+from presentacion.control_libros import agregar_libro,listar_libros,modificar_libro,eliminar_libro
 
 titulo = 'Sistema Gestión Biblioteca'
 
