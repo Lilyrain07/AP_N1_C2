@@ -1,10 +1,6 @@
-from negocio import procesar_libro
+from negocio.negocio_libro import procesar_libro
 from datos import listado_libros
 import os
-
-def obtener_data_libros():
-    if len(listado_libros) > 0:
-        return listado_libros
 
 def escribir_data_libros():
     lista_modificada = procesar_libro()
