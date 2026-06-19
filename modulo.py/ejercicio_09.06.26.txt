@@ -34,4 +34,4 @@ Usuario de Pruebas:
 Modificaciones X realizar:
     Validar correo único
     Validar rut único
-    Validar cantidad de veces para login
+    Validar cantidad de veces para login => OK

@@ -11,7 +11,8 @@ def agregar_usuario():
     listar_usuarios()
 
     print('\nIngrese los datos del usuario:')
-    escribir_data_usuarios()
+    lista_modificada = procesar_usuario()
+    escribir_data_usuarios(lista_modificada)
 
 def listar_usuarios():
     tabla_usuarios = PrettyTable()
@@ -22,18 +23,18 @@ def listar_usuarios():
     tabla_usuarios = crear_tabla_usuarios()
     print(tabla_usuarios)
 
-def login_usuario():
-    correo_usuario = solicitar_dato('Correo Usuario: ')
+def login_usuario(correo_usuario):
     usuario = buscar_usuario_correo(correo_usuario)
     if usuario:
         contrasena = solicitar_contrasena('Contraseña Usuario: ')
         contrasena = contrasena.encode('utf-8')
         if bcrypt.checkpw(contrasena, usuario['contrasena']):
-            return True
+            return 'pass correcta'
         else:
-            return False
+            return 'pass incorrecta'
     else:
         print(usuario_no_encontrado)
+        return 'no encontrado'
 
 def modificar_usuario():
     titulo = '\nModificar Usuario'
