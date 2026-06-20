@@ -1,16 +1,9 @@
-listado_mascotas = [{'nombre': 'nala', 'raza': 'perro', 'edad': '3 años'}
-                    , {'nombre': 'michi', 'raza': 'gato', 'edad': '2 años'}
-                    , {'nombre': 'tortuga', 'raza': 'tortuga', 'edad': '10 años'}
-                    , {'nombre': 'perry', 'raza': 'perico', 'edad': '1 año'}]
+lista_mascotas = [
+    {"nombre": "Luna", "raza": "Labrador", "edad": 3},
+    {"nombre": "Milo", "raza": "Persa", "edad": 2},
+    {"nombre": "Oliver", "raza": "Angora", "edad": 1},
+    {"nombre": "Bella", "raza": "Poodle", "edad": 5}
+]
 
-def mascota_encontrada(nombre):
-    for mascota in listado_mascotas:
-        if mascota['nombre'].lower() == nombre.lower():
-            return mascota
-    return None
-
-def buscar_mascota(nombre):
-    for mascota in listado_mascotas:
-        if mascota['nombre'].lower() == nombre.lower():
-            return mascota
-    return None
+def obtener_lista_mascotas():
+    return lista_mascotas

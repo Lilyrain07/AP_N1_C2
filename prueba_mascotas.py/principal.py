@@ -1,5 +1,4 @@
-from presentacion_mascotas.presentacion import buscar_mascota,menu_principal, titulo_principal
+from presentacion_mascotas.presentacion import mostrar_menu
 
-menu_principal()
-
-
+if __name__ == "__main__":
+    mostrar_menu()
