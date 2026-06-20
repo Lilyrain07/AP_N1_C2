@@ -1,1 +1,0 @@
-lista_contactos = [{'nombre': '', 'apellido': '', 'telefono': ''}]
