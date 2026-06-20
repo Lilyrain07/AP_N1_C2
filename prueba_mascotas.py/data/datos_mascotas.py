@@ -1,4 +1,4 @@
-lista_mascotas = [
+base_de_datos = [
     {"nombre": "Luna", "raza": "Labrador", "edad": 3},
     {"nombre": "Milo", "raza": "Persa", "edad": 2},
     {"nombre": "Oliver", "raza": "Angora", "edad": 1},
@@ -6,4 +6,4 @@ lista_mascotas = [
 ]
 
 def obtener_lista_mascotas():
-    return lista_mascotas
+    return base_de_datos

@@ -1,4 +1,4 @@
-from negocio import buscar_mascota_por_nombre
+from negocio.negocios import buscar_mascota_por_nombre
 
 def mostrar_detalle_mascota(mascota):
     print("-" * 40)
@@ -21,6 +21,8 @@ def mostrar_menu():
         
         if opcion == "1":
             busqueda = input("\nIntroduce el nombre de la mascota a buscar: ")
+            
+            # Llama a la capa de negocio que ya fue declarada arriba
             resultado = buscar_mascota_por_nombre(busqueda)
             
             if resultado:
