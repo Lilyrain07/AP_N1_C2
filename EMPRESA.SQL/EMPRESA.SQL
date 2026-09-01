@@ -32,11 +32,11 @@ fecharegistro DATE
 -- otra tabla pero de productos y sus atributos
 CREATE TABLE t_producto
 (
-    id INT PRIMARY KEY,
-    nombre VARCHAR (255) NOT NULL,
-    precio DECIMAL (10,2) NOT NULL,
-    stock INT DEFAULT 0,
-    fechacreacion DATETIME DEFAULT CURRENT_TIMESTAMP
+id INT PRIMARY KEY,
+nombre VARCHAR (255) NOT NULL,
+precio DECIMAL (10,2) NOT NULL,
+stock INT DEFAULT 0,
+fechacreacion DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 -- datetime default current_timestamps : es para registrar con la hora que tiene el dispositivo
@@ -71,3 +71,27 @@ DROP TABLE nombre_tabla;
 */
 --  a eliminar 
 DROP TABLE t_producto;
+
+insert into nombre_tabla(columna1,columna2,columna3)
+    values (valor1,valor2,valor3);
+    -- se usa para agregar nuevos registros a una tabla
+
+
+--para insertar varios datos:
+
+insert into t_personal (id,nombre,apellido,salario,departamento)
+    values(2,'maria', 'garcia', 650000,'marketing'),
+          (3,'carlos','lopez',680000,'IT'),
+          (4,'ana','martin',620000,'ventas');
+
+
+--insertar sin especificacion de columnas
+
+insert into t_personal
+    values (5,'ana','santos','as@gmail.com','temuco',900000, 'gerencia', '2025-08-21');
+
+    
+insert into t_producto
+    values (1,'cuaderno',4500,20,'2025-08-21'),
+            (2,'lapiz',2800,35,'2024-09-11'),
+            (9,'goma',1200,15,'2023-10-31');
